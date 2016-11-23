@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+      <script src="angular.min.js" ng:autobind></script>
+    <!-- Modules -->
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="JS/Controller.js"></script>
+    
+    <link href="CSS/styles.css" rel="stylesheet" />
+
+
+    <!-- Include the AngularJS library -->
+    
+  </head>
+  <body ng-app="myApp">
+    
+
+    <div class="main" ng-controller="MainController">
+      
+<h1></h1>
+        <div id="header">
+    <input type="text" ng-model="details"  />
+    <button  ng-click="searchDetails(details)">Search</button>
+    <button ng-click="newUser()">New User</button>
+</div>
+
+
+<div id="sidebar">
+    <!--<ng:include src="'tpl/wine-list.html'"></ng:include>-->
+</div>
+<div id="content" ng-if="Display" class="form-left-col">
+    
+
+    <label>First Name:</label>
+    <input type="text" ng-model="User.firstname" />
+    <span ng-if="fname">Enter First Name</span>
+
+    <label>Last name:</label>
+    <input type="text" name="User.lastname" ng-model="User.lastname"/>
+    <span ng-if="lname">Enter Last Name</span>
+
+    <label>Age:</label>
+    <input type="text" name="User.age" ng-model="User.age" required/>
+    <span ><i ng-if="ageOfUser">Enter Age</i>
+    <i ng-if="ageInvalid">Invalid age format</i></span>
+
+    <label>DOB:</label>
+    <input type="text" name="User.dob" ng-model="User.dob" size="12" placeholder="DD/MM/YYYY" required/>
+    <span ><i ng-if="birthDate">Enter Date of Birth</i>
+    <i ng-if="dobInvalid">Invalid date of birth</i></span>
+
+
+    <label>Gender:</label>
+    <select ng-model="User.gender">
+        <option name="gender" value="M">Male</option>
+        <option name="gender" value="F">Female</option>
+    </select>
+    <span><i ng-if="gen">Select gender </i></span>
+
+    <label>Contact:</label>
+    <input type="text" name="User.Contact" ng-model="User.Contact"/>
+    <span ><i ng-if="contactNumber">Enter Contcat Number</i>
+    <i ng-if="ContactInvalid">Contact Number is not valid</i></span>
+
+    <button class="save" ng:click="saveUser(User)">Save</button>
+    <button class="delete" ng:click="delete()">Delete</button>
+</div>
+
+<div id="content1" ng-if="Display" class="form-right-col">
+    
+    <label>Description:</label>
+    <textarea name="User.description" ng-model="User.Description"></textarea>
+</div>
+
+    </div>
+
+    
+
+
+
+  </body>
+  
+</html>

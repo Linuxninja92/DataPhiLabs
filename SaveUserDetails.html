@@ -1,0 +1,37 @@
+<link href="CSS/styles.css" rel="stylesheet" />
+<div ng-controller="MainController">
+<div class="form-left-col">
+    <label>Id:</label>
+    <input name="id" type="text" value="{{ User.id }}" disabled />
+
+    <label>First Name:</label>
+    <input type="text" name="User.firstname" value="{{ User.firstname }}" required/>
+
+    <label>Last name:</label>
+    <input type="text" name="User.lastname" value="{{ User.lastname }}"/>
+
+    <label>Age:</label>
+    <input type="text" name="User.age" value="{{ User.age }}"/>
+
+    <label>DOB:</label>
+    <input type="text" name="User.dob" value="{{ User.dob }}"/>
+
+    <label>Gender:</label>
+    <select>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+    </select>
+
+    <label>Contact:</label>
+    <input type="text" name="User.Contact" value="{{ User.Contact }}"/>
+
+    <button class="save" ng:click="saveWine()">Save</button>
+    <button class="delete" ng:click="deleteWine()">Delete</button>
+</div>
+
+<div class="form-right-col">
+    
+    <label>Description:</label>
+    <textarea name="User.description">{{ User.description }}</textarea>
+</div>
+</div>
